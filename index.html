@@ -13,22 +13,25 @@
               region: "eu-gb", // The region your integration is hosted in.
               serviceInstanceID: "70483e32-ea33-430e-aff8-e7a4eca8bd90", // The ID of your service instance.
               onLoad: function(instance) { 
-              let x = "apartment"
+              // condition on response from iframe
+              // if true -> make x equals to response
+                let x = "apartment"
+                
                 instance.render(); 
-                          // Instance Send 
-                          // const -> const alwyas , Let -> can be changed
-                          let sendObject = {
-                            "input": {
-                              "message_type": "text",
-                              "text": x
-                            }
-                          };
-                          let sendOptions = {
-                            "silent": false
-                          }
-                          instance.send(sendObject, sendOptions).catch(function(error) {
-                            console.error('This message did not send!');
-                          });
+                // Instance Send 
+                // const -> const alwyas , Let -> can be changed
+                let sendObject = {
+                  "input": {
+                    "message_type": "text",
+                    "text": x
+                  }
+                };
+                let sendOptions = {
+                  "silent": false
+                }
+                instance.send(sendObject, sendOptions).catch(function(error) {
+                  console.error('This message did not send!');
+                });
               }
             };
           setTimeout(function(){
