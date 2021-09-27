@@ -15,9 +15,8 @@
               onLoad: function(instance) { 
               // condition on response from iframe
               // if true -> make x equals to response
-                let x = "apartment"
-
-                instance.render(); 
+                //let x = "apartment"
+                instance.render();
                 // Instance Send 
                 // const -> const alwyas , Let -> can be changed
                 let sendObject = {
@@ -27,7 +26,7 @@
                   }
                 };
                 let sendOptions = {
-                  "silent": false
+                  "silent": true
                 }
                 instance.send(sendObject, sendOptions).catch(function(error) {
                   console.error('This message did not send!');
