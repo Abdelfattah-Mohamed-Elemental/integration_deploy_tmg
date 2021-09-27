@@ -13,12 +13,13 @@
               region: "eu-gb", // The region your integration is hosted in.
               serviceInstanceID: "70483e32-ea33-430e-aff8-e7a4eca8bd90", // The ID of your service instance.
               onLoad: function(instance) { 
+              let x = "apartment"
                 instance.render(); 
                           // Instance Send 
                           const sendObject = {
                             "input": {
                               "message_type": "text",
-                              "text": "apartment"
+                              "text": x
                             }
                           };
                           const sendOptions = {
