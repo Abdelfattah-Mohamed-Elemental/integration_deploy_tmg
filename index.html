@@ -16,13 +16,14 @@
               let x = "apartment"
                 instance.render(); 
                           // Instance Send 
-                          const sendObject = {
+                          // const
+                          let sendObject = {
                             "input": {
                               "message_type": "text",
                               "text": x
                             }
                           };
-                          const sendOptions = {
+                          let sendOptions = {
                             "silent": false
                           }
                           instance.send(sendObject, sendOptions).catch(function(error) {
