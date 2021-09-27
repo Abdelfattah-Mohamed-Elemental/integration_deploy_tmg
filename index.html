@@ -7,24 +7,27 @@
             web-chat DEPLOYMENT
         </h1>
         <script>
-          // Instance Send 
-          const sendObject = {
-            "input": {
-              "message_type": "text",
-              "text": "villa"
-            }
-          };
-          const sendOptions = {
-            "silent": true
-          }
-          instance.send(sendObject, sendOptions).catch(function(error) {
-            console.error('This message did not send!');
-          });
+
           window.watsonAssistantChatOptions = {
               integrationID: "7b5f42b8-ea24-47f0-a646-c1a1f4e41b54", // The ID of this integration.
               region: "eu-gb", // The region your integration is hosted in.
               serviceInstanceID: "70483e32-ea33-430e-aff8-e7a4eca8bd90", // The ID of your service instance.
-              onLoad: function(instance) { instance.render(); }
+              onLoad: function(instance) { 
+                instance.render(); 
+                          // Instance Send 
+                          const sendObject = {
+                            "input": {
+                              "message_type": "text",
+                              "text": "villa"
+                            }
+                          };
+                          const sendOptions = {
+                            "silent": true
+                          }
+                          instance.send(sendObject, sendOptions).catch(function(error) {
+                            console.error('This message did not send!');
+                          });
+              }
             };
           setTimeout(function(){
             const t=document.createElement('script');
