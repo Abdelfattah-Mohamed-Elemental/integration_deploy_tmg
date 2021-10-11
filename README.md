@@ -1,6 +1,17 @@
 # integration_deploy_tmg
-type: markdown
-content: >
-  ## Lovelace
+type: entity-filter
+entities:
+  - light.bed_light
+  - light.ceiling_lights
+  - light.kitchen_lights
+state_filter:
+  - 'on'
+card:
+  type: markdown
+  content: |
+    The lights that are on are:
+    {% for l in config.entities %}
+      - {{ l.entity }}
+    {%- endfor %}
 
-  Starting with Home Assistant 0.72, we're experimenting with a new way of defining your interface. We're calling it the **Lovelace UI**.
+    And the door is {% if is_state('binary_sensor.door', 'on') %} open {% else %} closed {% endif %}.
