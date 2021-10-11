@@ -1,17 +1,8 @@
 # integration_deploy_tmg
-type: entity-filter
-entities:
-  - light.bed_light
-  - light.ceiling_lights
-  - light.kitchen_lights
-state_filter:
-  - 'on'
-card:
-  type: markdown
-  content: |
-    The lights that are on are:
-    {% for l in config.entities %}
-      - {{ l.entity }}
-    {%- endfor %}
+type: markdown
+title: ha-icon
+content: |
+  This is a markdown card! With mdi icons!
+  <ha-icon icon="mdi:home-assistant"></ha-icon>
 
-    And the door is {% if is_state('binary_sensor.door', 'on') %} open {% else %} closed {% endif %}.
+  Right in the <ha-icon icon="mdi:format-align-middle"></ha-icon> of the <ha-icon icon="mdi:text"></ha-icon> too.
